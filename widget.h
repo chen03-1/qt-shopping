@@ -1,0 +1,30 @@
+#ifndef WIDGET_H
+#define WIDGET_H
+
+#include <QWidget>
+#include <QStackedWidget>
+#include"register_interface1.h"
+
+QT_BEGIN_NAMESPACE
+namespace Ui {
+class Widget;
+}
+QT_END_NAMESPACE
+
+class Widget : public QWidget
+{
+    Q_OBJECT
+
+public:
+    Widget(QWidget *parent = nullptr);
+    ~Widget();
+
+private:
+    Ui::Widget *ui;
+    // 声明堆叠窗口指针（用于管理页面）
+    QStackedWidget *stackedWidget;
+    //注册页面指针
+    register_interface1 * r1;
+    Widget * w;
+};
+#endif // WIDGET_H
