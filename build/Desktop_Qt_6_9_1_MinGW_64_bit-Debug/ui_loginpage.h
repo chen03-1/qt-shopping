@@ -85,7 +85,7 @@ public:
         pushButton->setGeometry(QRect(121, 271, 56, 18));
         label_3 = new register_lable(loginpage);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(280, 270, 36, 16));
+        label_3->setGeometry(QRect(290, 270, 36, 16));
 
         retranslateUi(loginpage);
 
@@ -100,7 +100,7 @@ public:
         label_2->setText(QCoreApplication::translate("loginpage", "\345\257\206\347\240\201\357\274\232", nullptr));
         checkBox->setText(QCoreApplication::translate("loginpage", "\350\256\260\344\275\217\345\257\206\347\240\201", nullptr));
         pushButton->setText(QCoreApplication::translate("loginpage", "\347\241\256\350\256\244", nullptr));
-        label_3->setText(QCoreApplication::translate("loginpage", "\347\202\271\345\207\273\346\263\250\345\206\214", nullptr));
+        label_3->setText(QCoreApplication::translate("loginpage", "\346\263\250\345\206\214", nullptr));
     } // retranslateUi
 
 };

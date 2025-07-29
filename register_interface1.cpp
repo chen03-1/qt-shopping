@@ -7,6 +7,7 @@ register_interface1::register_interface1(QWidget *parent)
 {
     ui->setupUi(this);
     connect(ui->pushButton_2,&QPushButton::clicked,this,&register_interface1::switchTologin);
+    connect(ui->pushButton,&QPushButton::clicked,this,&register_interface1::switchTologin);
 }
 
 register_interface1::~register_interface1()

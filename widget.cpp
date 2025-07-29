@@ -10,7 +10,7 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
 
     //创建堆叠窗口
-    stackedWidget=new QStackedWiaget(this);
+    stackedWidget=new QStackedWidget(this);
     // widget.cpp 构造函数里，创建 stackedWidget 后添加
     QVBoxLayout * mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(stackedWidget);
@@ -35,6 +35,7 @@ Widget::Widget(QWidget *parent)
             [=](){
                 stackedWidget->setCurrentIndex(0);
     });
+
 
 }
 

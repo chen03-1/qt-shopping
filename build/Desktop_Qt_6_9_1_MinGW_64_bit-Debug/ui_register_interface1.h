@@ -95,7 +95,7 @@ public:
         label_2->setText(QCoreApplication::translate("register_interface1", "\345\257\206\347\240\201\357\274\232", nullptr));
         label_3->setText(QCoreApplication::translate("register_interface1", "\347\241\256\350\256\244\345\257\206\347\240\201\357\274\232", nullptr));
         pushButton->setText(QCoreApplication::translate("register_interface1", "\347\241\256\350\256\244", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("register_interface1", "\350\277\224\345\233\236\347\231\273\345\275\225\347\225\214\351\235\242", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("register_interface1", "\350\277\224\345\233\236\347\231\273\345\275\225", nullptr));
     } // retranslateUi
 
 };
