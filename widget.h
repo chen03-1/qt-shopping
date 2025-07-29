@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QStackedWidget>
 #include"register_interface1.h"
+#include"loginpage.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,7 +25,8 @@ private:
     // 声明堆叠窗口指针（用于管理页面）
     QStackedWidget *stackedWidget;
     //注册页面指针
-    register_interface1 * r1;
-    Widget * w;
+    register_interface1 * r1;//注册
+    loginpage * login_page;//登录
+
 };
 #endif // WIDGET_H

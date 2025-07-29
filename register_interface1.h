@@ -15,6 +15,10 @@ public:
     explicit register_interface1(QWidget *parent = nullptr);
     ~register_interface1();
 
+signals:
+    void switchTologin();
+
+
 private:
     Ui::register_interface1 *ui;
 };
