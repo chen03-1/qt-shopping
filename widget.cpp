@@ -19,10 +19,12 @@ Widget::Widget(QWidget *parent)
     //创建页面实例
     r1=new register_interface1();
     login_page=new loginpage();
+    use_page=new usepage();
 
     //页面添加堆叠窗口
     stackedWidget->addWidget(login_page);
     stackedWidget->addWidget(r1);
+    stackedWidget->addWidget(use_page);
 
 
     //标签跳转到注册页

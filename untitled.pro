@@ -14,6 +14,7 @@ SOURCES += \
     main.cpp \
     register_interface1.cpp \
     register_lable.cpp \
+    usepage.cpp \
     widget.cpp
 
 HEADERS += \
@@ -21,11 +22,13 @@ HEADERS += \
     loginpage.h \
     register_interface1.h \
     register_lable.h \
+    usepage.h \
     widget.h
 
 FORMS += \
     loginpage.ui \
     register_interface1.ui \
+    usepage.ui \
     widget.ui
 
 # Default rules for deployment.

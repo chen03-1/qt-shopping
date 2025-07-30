@@ -34,7 +34,7 @@ public:
     QLabel *label_2;
     QLineEdit *lineEdit_2;
     QCheckBox *checkBox;
-    QPushButton *pushButton;
+    QPushButton *confirm_pushButton;
     register_lable *label_3;
 
     void setupUi(QWidget *loginpage)
@@ -80,9 +80,9 @@ public:
 
         verticalLayout_2->addWidget(widget);
 
-        pushButton = new QPushButton(loginpage);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(121, 271, 56, 18));
+        confirm_pushButton = new QPushButton(loginpage);
+        confirm_pushButton->setObjectName("confirm_pushButton");
+        confirm_pushButton->setGeometry(QRect(121, 271, 56, 18));
         label_3 = new register_lable(loginpage);
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(290, 270, 36, 16));
@@ -99,7 +99,7 @@ public:
         label->setText(QCoreApplication::translate("loginpage", "\350\264\246\345\217\267\357\274\232", nullptr));
         label_2->setText(QCoreApplication::translate("loginpage", "\345\257\206\347\240\201\357\274\232", nullptr));
         checkBox->setText(QCoreApplication::translate("loginpage", "\350\256\260\344\275\217\345\257\206\347\240\201", nullptr));
-        pushButton->setText(QCoreApplication::translate("loginpage", "\347\241\256\350\256\244", nullptr));
+        confirm_pushButton->setText(QCoreApplication::translate("loginpage", "\347\241\256\350\256\244", nullptr));
         label_3->setText(QCoreApplication::translate("loginpage", "\346\263\250\345\206\214", nullptr));
     } // retranslateUi
 

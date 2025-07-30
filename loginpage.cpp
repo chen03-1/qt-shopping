@@ -8,6 +8,7 @@ loginpage::loginpage(QWidget *parent)
     ui->setupUi(this);
     connect(ui->label_3,static_cast<void (register_lable::*)()>(&register_lable::clicked),
     this,&loginpage::switchToRegister);
+
 }
 
 loginpage::~loginpage()

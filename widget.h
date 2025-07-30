@@ -5,7 +5,7 @@
 #include <QStackedWidget>
 #include"register_interface1.h"
 #include"loginpage.h"
-
+#include"usepage.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;
@@ -27,6 +27,7 @@ private:
     //注册页面指针
     register_interface1 * r1;//注册
     loginpage * login_page;//登录
+    usepage * use_page;//用户
 
 };
 #endif // WIDGET_H

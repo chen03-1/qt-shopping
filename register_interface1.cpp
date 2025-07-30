@@ -9,7 +9,6 @@ register_interface1::register_interface1(QWidget *parent)
 {
     ui->setupUi(this);
 
-
     //按钮跳转界面,并读取用户输入
     connect(ui->pushButton_2,&QPushButton::clicked,this,&register_interface1::switchTologin);
 
