@@ -2,30 +2,25 @@
 #include<QSqlQuery>
 #include<QSqlError>
 #include<QMessageBox>
-
-// 初始化静态成员变量
-DatabaseManager* DatabaseManager::instance = nullptr;
-
-// 静态方法实现：获取唯一实例
-DatabaseManager* DatabaseManager::getInstance() {
-    if (instance == nullptr) {
-        instance = new DatabaseManager();
-    }
-    return instance;
-}
+#include <QDir>
+#include<QDebug>
 
 DatabaseManager::DatabaseManager(QObject *parent)
     : QObject{parent}
 {
-    //初始化数据库
+
     // 手动加载 SQLite 驱动
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    // 检查驱动是否加载成功
-    if (!db.isValid()) {
-        qCritical() << "SQLite 驱动加载失败！";
+    if (!QSqlDatabase::isDriverAvailable("QSQLITE")) {
+        lastError = "SQLite驱动未安装（找不到QSQLITE驱动）";
         return;
     }
-    db.setDatabaseName("./shopping.db");
+    // 初始化数据库连接
+    db = QSqlDatabase::addDatabase("QSQLITE");
+
+    // 设置数据库文件路径（使用绝对路径避免相对路径问题）
+    QString dbPath = QDir::currentPath() + "/user.db"; // 当前程序运行目录下
+    db.setDatabaseName(dbPath);
+    lastError = "构造函数初始化完成";
 
 }
 
@@ -33,20 +28,20 @@ DatabaseManager::DatabaseManager(QObject *parent)
 
 DatabaseManager::~DatabaseManager()
 {
-    if (m_db.isOpen()) {
-        m_db.close(); // 析构时关闭数据库
+    if (db.isOpen()) {
+        db.close(); // 析构时关闭数据库
     }
 }
 //实现
 bool DatabaseManager::initDatabase()
 {
     if (!QSqlDatabase::isDriverAvailable("QSQLITE")) {
-        qCritical() << "SQLite 驱动未找到！";
+        lastError = "初始化失败：SQLite驱动不可用";
         return false;
     }
-    if(!m_db.open())
+    if(!db.open())
     {
-        qCritical() << "数据库打开失败：" << m_db.lastError().text();
+        lastError = "打开数据库失败：" + db.lastError().text();
         return false;
     }
 
@@ -58,16 +53,18 @@ bool DatabaseManager::initDatabase()
                              "password text not null)";
     if(!query.exec(createTableSql))
     {
-        m_db.close();
+        lastError = "创建用户表失败：" + query.lastError().text();
+        db.close();
         return false;
     }
+     lastError = "初始化成功";
     return true;
 }
 
 bool DatabaseManager::registerUser(const QString &username,const QString &password,QString &errorMsg)
 {
-    if (!m_db.isOpen() && !m_db.open()) {
-        errorMsg = "数据库连接失败：" + m_db.lastError().text();
+    if (!db.isOpen() && !db.open()) {
+        errorMsg = "数据库连接失败：" + db.lastError().text();
         return false;
     }
     //官网qt上有
@@ -86,8 +83,8 @@ bool DatabaseManager::registerUser(const QString &username,const QString &passwo
 
 bool DatabaseManager::loginUser(const QString &username,const QString &password,QString &errorMsg)
 {
-    if (!m_db.isOpen() && !m_db.open()) {
-        errorMsg = "数据库连接失败：" + m_db.lastError().text();
+    if (!db.isOpen() && !db.open()) {
+        errorMsg = "数据库连接失败：" + db.lastError().text();
         return false;
     }
      QSqlQuery query;
