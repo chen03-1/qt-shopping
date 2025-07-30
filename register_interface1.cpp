@@ -9,12 +9,6 @@ register_interface1::register_interface1(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //初始化数据库界面
-    DatabaseManager * dbManager=new DatabaseManager(this);
-    if(!dbManager->initDatabase())
-    {
-        QMessageBox::critical(this,"错误","数据库初始化失败");
-    }
 
     //按钮跳转界面,并读取用户输入
     connect(ui->pushButton_2,&QPushButton::clicked,this,&register_interface1::switchTologin);
