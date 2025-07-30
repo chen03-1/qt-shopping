@@ -26,11 +26,11 @@ public:
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout;
     QLabel *label;
-    QLineEdit *lineEdit;
+    QLineEdit *usernameEdit;
     QLabel *label_2;
-    QLineEdit *lineEdit_2;
+    QLineEdit *passwordEdit;
     QLabel *label_3;
-    QLineEdit *lineEdit_3;
+    QLineEdit *confirmPwdEdit;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
 
@@ -50,30 +50,30 @@ public:
 
         verticalLayout->addWidget(label);
 
-        lineEdit = new QLineEdit(groupBox);
-        lineEdit->setObjectName("lineEdit");
+        usernameEdit = new QLineEdit(groupBox);
+        usernameEdit->setObjectName("usernameEdit");
 
-        verticalLayout->addWidget(lineEdit);
+        verticalLayout->addWidget(usernameEdit);
 
         label_2 = new QLabel(groupBox);
         label_2->setObjectName("label_2");
 
         verticalLayout->addWidget(label_2);
 
-        lineEdit_2 = new QLineEdit(groupBox);
-        lineEdit_2->setObjectName("lineEdit_2");
+        passwordEdit = new QLineEdit(groupBox);
+        passwordEdit->setObjectName("passwordEdit");
 
-        verticalLayout->addWidget(lineEdit_2);
+        verticalLayout->addWidget(passwordEdit);
 
         label_3 = new QLabel(groupBox);
         label_3->setObjectName("label_3");
 
         verticalLayout->addWidget(label_3);
 
-        lineEdit_3 = new QLineEdit(groupBox);
-        lineEdit_3->setObjectName("lineEdit_3");
+        confirmPwdEdit = new QLineEdit(groupBox);
+        confirmPwdEdit->setObjectName("confirmPwdEdit");
 
-        verticalLayout->addWidget(lineEdit_3);
+        verticalLayout->addWidget(confirmPwdEdit);
 
         pushButton = new QPushButton(register_interface1);
         pushButton->setObjectName("pushButton");

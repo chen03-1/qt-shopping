@@ -19,7 +19,6 @@ protected:
     void mousePressEvent(QMouseEvent *event);
 
 private:
-
 };
 
 #endif // REGISTER_LABLE_H

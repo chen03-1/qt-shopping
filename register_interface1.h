@@ -2,7 +2,7 @@
 #define REGISTER_INTERFACE1_H
 
 #include <QWidget>
-
+#include <QLineEdit>
 namespace Ui {
 class register_interface1;
 }
@@ -15,12 +15,14 @@ public:
     explicit register_interface1(QWidget *parent = nullptr);
     ~register_interface1();
 
+
 signals:
     void switchTologin();
 
 
 private:
     Ui::register_interface1 *ui;
+
 };
 
 #endif // REGISTER_INTERFACE1_H
