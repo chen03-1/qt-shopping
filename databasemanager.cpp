@@ -18,9 +18,14 @@ DatabaseManager::DatabaseManager(QObject *parent)
     : QObject{parent}
 {
     //初始化数据库
-    m_db=QSqlDatabase::addDatabase("QSQLITE");
-    m_db.setDatabaseName("./user.db");
-
+    // 手动加载 SQLite 驱动
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    // 检查驱动是否加载成功
+    if (!db.isValid()) {
+        qCritical() << "SQLite 驱动加载失败！";
+        return;
+    }
+    db.setDatabaseName("./shopping.db");
 
 }
 
@@ -35,8 +40,13 @@ DatabaseManager::~DatabaseManager()
 //实现
 bool DatabaseManager::initDatabase()
 {
+    if (!QSqlDatabase::isDriverAvailable("QSQLITE")) {
+        qCritical() << "SQLite 驱动未找到！";
+        return false;
+    }
     if(!m_db.open())
     {
+        qCritical() << "数据库打开失败：" << m_db.lastError().text();
         return false;
     }
 
@@ -44,7 +54,7 @@ bool DatabaseManager::initDatabase()
     QSqlQuery query;
     QString createTableSql="create table if not exists user("
                              "id integer primary key autoincrement,"
-                             "username text unique not null"
+                             "username text unique not null,"
                              "password text not null)";
     if(!query.exec(createTableSql))
     {
