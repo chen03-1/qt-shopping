@@ -30,9 +30,9 @@ public:
     QWidget *widget;
     QVBoxLayout *verticalLayout;
     QLabel *label;
-    QLineEdit *lineEdit;
+    QLineEdit *login_username_lineEdit;
     QLabel *label_2;
-    QLineEdit *lineEdit_2;
+    QLineEdit *login_password_lineEdit;
     QCheckBox *checkBox;
     QPushButton *confirm_pushButton;
     register_lable *label_3;
@@ -57,20 +57,20 @@ public:
 
         verticalLayout->addWidget(label);
 
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName("lineEdit");
+        login_username_lineEdit = new QLineEdit(widget);
+        login_username_lineEdit->setObjectName("login_username_lineEdit");
 
-        verticalLayout->addWidget(lineEdit);
+        verticalLayout->addWidget(login_username_lineEdit);
 
         label_2 = new QLabel(widget);
         label_2->setObjectName("label_2");
 
         verticalLayout->addWidget(label_2);
 
-        lineEdit_2 = new QLineEdit(widget);
-        lineEdit_2->setObjectName("lineEdit_2");
+        login_password_lineEdit = new QLineEdit(widget);
+        login_password_lineEdit->setObjectName("login_password_lineEdit");
 
-        verticalLayout->addWidget(lineEdit_2);
+        verticalLayout->addWidget(login_password_lineEdit);
 
         checkBox = new QCheckBox(widget);
         checkBox->setObjectName("checkBox");

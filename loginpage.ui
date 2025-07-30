@@ -43,7 +43,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="login_username_lineEdit"/>
        </item>
        <item>
         <widget class="QLabel" name="label_2">
@@ -53,7 +53,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="login_password_lineEdit"/>
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox">
