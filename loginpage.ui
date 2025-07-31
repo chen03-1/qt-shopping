@@ -43,7 +43,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="login_username_lineEdit"/>
+        <widget class="QComboBox" name="login_username_comboBox"/>
        </item>
        <item>
         <widget class="QLabel" name="label_2">

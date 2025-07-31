@@ -34,7 +34,7 @@ register_interface1::register_interface1(QWidget *parent)
             ui->usernameEdit->clear();
             ui->passwordEdit->clear();
             ui->confirmPwdEdit->clear();
-            &register_interface1::switchTologin;
+            emit switchTologin();
         } else {
             QMessageBox::critical(this, "失败", "注册失败：" + error);
         }

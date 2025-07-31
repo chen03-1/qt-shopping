@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -30,7 +31,7 @@ public:
     QWidget *widget;
     QVBoxLayout *verticalLayout;
     QLabel *label;
-    QLineEdit *login_username_lineEdit;
+    QComboBox *login_username_comboBox;
     QLabel *label_2;
     QLineEdit *login_password_lineEdit;
     QCheckBox *checkBox;
@@ -57,10 +58,10 @@ public:
 
         verticalLayout->addWidget(label);
 
-        login_username_lineEdit = new QLineEdit(widget);
-        login_username_lineEdit->setObjectName("login_username_lineEdit");
+        login_username_comboBox = new QComboBox(widget);
+        login_username_comboBox->setObjectName("login_username_comboBox");
 
-        verticalLayout->addWidget(login_username_lineEdit);
+        verticalLayout->addWidget(login_username_comboBox);
 
         label_2 = new QLabel(widget);
         label_2->setObjectName("label_2");

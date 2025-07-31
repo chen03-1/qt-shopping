@@ -15,7 +15,7 @@ loginpage::loginpage(QWidget *parent)
     this,&loginpage::switchToRegister);
 
     connect(ui->confirm_pushButton,&QPushButton::clicked,[=](){
-        QString login_username=ui->login_username_lineEdit->text();
+        QString login_username=ui->login_username_comboBox->currentText();
         QString login_password=ui->login_password_lineEdit->text();
 
         if(login_username.isEmpty()||login_password.isEmpty())
@@ -29,7 +29,7 @@ loginpage::loginpage(QWidget *parent)
             bool status = ui->checkBox->isChecked();
             if(!status)
             {
-                ui->login_username_lineEdit->clear();
+                ui->login_username_comboBox->clear();
                 ui->login_password_lineEdit->clear();
             }
             emit switchTousepage();
@@ -37,7 +37,7 @@ loginpage::loginpage(QWidget *parent)
         else
         {
             QMessageBox::warning(this, "失败", "用户名或密码错误");
-            ui->login_username_lineEdit->clear();
+            ui->login_username_comboBox->clear();
             ui->login_password_lineEdit->clear();
         }
 
