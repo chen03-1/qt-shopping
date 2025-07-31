@@ -82,7 +82,7 @@ public:
     {
         if (usepage->objectName().isEmpty())
             usepage->setObjectName("usepage");
-        usepage->resize(591, 424);
+        usepage->resize(632, 512);
         frame = new QFrame(usepage);
         frame->setObjectName("frame");
         frame->setGeometry(QRect(120, 50, 421, 361));
@@ -198,13 +198,13 @@ public:
 
         frame_8 = new QFrame(usepage);
         frame_8->setObjectName("frame_8");
-        frame_8->setGeometry(QRect(0, 50, 111, 371));
+        frame_8->setGeometry(QRect(0, 50, 121, 371));
         frame_8->setFrameShape(QFrame::Shape::StyledPanel);
         frame_8->setFrameShadow(QFrame::Shadow::Raised);
         groupBox = new QGroupBox(frame_8);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(0, 10, 101, 371));
-        groupBox->setMinimumSize(QSize(101, 371));
+        groupBox->setGeometry(QRect(0, 10, 101, 400));
+        groupBox->setMinimumSize(QSize(101, 400));
         groupBox->setMaximumSize(QSize(101, 371));
         analyse_page = new QToolBox(groupBox);
         analyse_page->setObjectName("analyse_page");
@@ -215,7 +215,7 @@ public:
         goods_page->setGeometry(QRect(0, 0, 79, 243));
         add_goods_label = new QLabel(goods_page);
         add_goods_label->setObjectName("add_goods_label");
-        add_goods_label->setGeometry(QRect(20, 0, 40, 12));
+        add_goods_label->setGeometry(QRect(19, 0, 41, 16));
         del_goods_label = new QLabel(goods_page);
         del_goods_label->setObjectName("del_goods_label");
         del_goods_label->setGeometry(QRect(20, 20, 40, 12));
@@ -238,6 +238,7 @@ public:
         analyse_page->addItem(inventory_page, QString::fromUtf8("\345\272\223\345\255\230\347\256\241\347\220\206"));
         analyse_page_2 = new QWidget();
         analyse_page_2->setObjectName("analyse_page_2");
+        analyse_page_2->setGeometry(QRect(0, 0, 79, 243));
         profit_label = new QLabel(analyse_page_2);
         profit_label->setObjectName("profit_label");
         profit_label->setGeometry(QRect(19, 0, 51, 20));
@@ -250,6 +251,7 @@ public:
         analyse_page->addItem(analyse_page_2, QString::fromUtf8("\345\225\206\345\223\201\345\210\206\346\236\220"));
         data_page = new QWidget();
         data_page->setObjectName("data_page");
+        data_page->setGeometry(QRect(0, 0, 79, 243));
         datain_label = new QLabel(data_page);
         datain_label->setObjectName("datain_label");
         datain_label->setGeometry(QRect(20, 0, 40, 12));
@@ -297,7 +299,7 @@ public:
 
         retranslateUi(usepage);
 
-        analyse_page->setCurrentIndex(3);
+        analyse_page->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(usepage);

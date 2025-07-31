@@ -32,8 +32,16 @@ loginpage::loginpage(QWidget *parent)
                 ui->login_username_lineEdit->clear();
                 ui->login_password_lineEdit->clear();
             }
-
+            emit switchTousepage();
         }
+        else
+        {
+            QMessageBox::warning(this, "失败", "用户名或密码错误");
+            ui->login_username_lineEdit->clear();
+            ui->login_password_lineEdit->clear();
+        }
+
+
     });
 
 }

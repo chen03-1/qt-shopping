@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>591</width>
-    <height>424</height>
+    <width>632</width>
+    <height>512</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -344,7 +344,7 @@
     <rect>
      <x>0</x>
      <y>50</y>
-     <width>111</width>
+     <width>121</width>
      <height>371</height>
     </rect>
    </property>
@@ -360,13 +360,13 @@
       <x>0</x>
       <y>10</y>
       <width>101</width>
-      <height>371</height>
+      <height>400</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
       <width>101</width>
-      <height>371</height>
+      <height>400</height>
      </size>
     </property>
     <property name="maximumSize">
@@ -391,7 +391,7 @@
       <enum>QFrame::Shape::StyledPanel</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="goods_page">
       <property name="geometry">
@@ -408,10 +408,10 @@
       <widget class="QLabel" name="add_goods_label">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>19</x>
          <y>0</y>
-         <width>40</width>
-         <height>12</height>
+         <width>41</width>
+         <height>16</height>
         </rect>
        </property>
        <property name="text">
@@ -498,6 +498,14 @@
       </widget>
      </widget>
      <widget class="QWidget" name="analyse_page_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>79</width>
+        <height>243</height>
+       </rect>
+      </property>
       <attribute name="label">
        <string>商品分析</string>
       </attribute>
@@ -542,6 +550,14 @@
       </widget>
      </widget>
      <widget class="QWidget" name="data_page">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>79</width>
+        <height>243</height>
+       </rect>
+      </property>
       <attribute name="label">
        <string>数据</string>
       </attribute>

@@ -96,15 +96,13 @@ bool DatabaseManager::loginUser(const QString &username,const QString &password,
         return false;
     }
 
-    if (!query.next()) {
-        errorMsg = "用户名不存在";
+    if (!query.next()||query.value(0).toString() != password) {
+        errorMsg = "用户名或密码错误，请重新输入";
         return false;
     }
 
-    if (query.value(0).toString() != password) {
-        errorMsg = "密码错误";
-        return false;
-    }
+
+
 
     return true;
 

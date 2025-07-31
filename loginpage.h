@@ -18,6 +18,7 @@ public:
 
 signals:
     void switchToRegister();
+    void switchTousepage();
 
 private:
     Ui::loginpage *ui;

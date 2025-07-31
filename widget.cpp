@@ -37,6 +37,10 @@ Widget::Widget(QWidget *parent)
             [=](){
                 stackedWidget->setCurrentIndex(0);
     });
+    connect(login_page,&loginpage::switchTousepage,
+            [=](){
+                stackedWidget->setCurrentIndex(2);
+    });
 
 
 
