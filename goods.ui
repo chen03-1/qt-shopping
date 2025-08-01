@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>goods</class>
+ <widget class="QWidget" name="goods">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>953</width>
+    <height>599</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>951</width>
+     <height>521</height>
+    </rect>
+   </property>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>商品成本</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>商品定价</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>运费</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>商品毛利</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>毛利率</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>今日销量</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>今日销售额</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>周销量</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>周销售额</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>销售总额</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>库存</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>供应商</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

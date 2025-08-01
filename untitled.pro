@@ -10,6 +10,9 @@ CONFIG += c++17
 
 SOURCES += \
     databasemanager.cpp \
+    goods.cpp \
+    goods_analyse.cpp \
+    inventory.cpp \
     loginpage.cpp \
     main.cpp \
     register_interface1.cpp \
@@ -19,6 +22,9 @@ SOURCES += \
 
 HEADERS += \
     databasemanager.h \
+    goods.h \
+    goods_analyse.h \
+    inventory.h \
     loginpage.h \
     register_interface1.h \
     register_lable.h \
@@ -26,6 +32,9 @@ HEADERS += \
     widget.h
 
 FORMS += \
+    goods.ui \
+    goods_analyse.ui \
+    inventory.ui \
     loginpage.ui \
     register_interface1.ui \
     usepage.ui \
