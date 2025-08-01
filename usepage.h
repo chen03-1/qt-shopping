@@ -15,6 +15,12 @@ public:
     explicit usepage(QWidget *parent = nullptr);
     ~usepage();
 
+signals:
+    void switchTologinpage();
+    void switchTogoodspage();
+    void switchToinventory();
+    void switchToanalyse();
+
 private:
     Ui::usepage *ui;
 };

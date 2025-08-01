@@ -14,6 +14,7 @@ loginpage::loginpage(QWidget *parent)
 {
     ui->setupUi(this);
     ui->checkBox->setChecked(true);
+    //注册页跳转
     connect(ui->label_3,static_cast<void (register_lable::*)()>(&register_lable::clicked),
     this,&loginpage::switchToRegister);
 
@@ -21,6 +22,7 @@ loginpage::loginpage(QWidget *parent)
     connect(ui->login_username_comboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &loginpage::onUsernameChanged);
 
+    //登录键
     connect(ui->confirm_pushButton,&QPushButton::clicked,[=](){
         QString login_username=ui->login_username_comboBox->currentText();
         QString login_password=ui->login_password_lineEdit->text();

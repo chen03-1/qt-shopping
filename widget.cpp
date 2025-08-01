@@ -20,11 +20,17 @@ Widget::Widget(QWidget *parent)
     r1=new register_interface1();
     login_page=new loginpage();
     use_page=new usepage();
+    goods_page=new goods();
+    analyse_page=new goods_analyse();
+    inventory_page=new inventory();
 
     //页面添加堆叠窗口
     stackedWidget->addWidget(login_page);
     stackedWidget->addWidget(r1);
     stackedWidget->addWidget(use_page);
+    stackedWidget->addWidget(goods_page);
+    stackedWidget->addWidget(analyse_page);
+    stackedWidget->addWidget(inventory_page);
 
 
     //标签跳转到注册页
@@ -41,6 +47,14 @@ Widget::Widget(QWidget *parent)
             [=](){
                 stackedWidget->setCurrentIndex(2);
     });
+    connect(use_page,&usepage::switchTologinpage,
+            [=](){
+            stackedWidget->setCurrentIndex(0);
+    });
+    connect(use_page,&usepage::switchTogoodspage,
+            [=](){
+                stackedWidget->setCurrentIndex(3);
+            });
 
 
 

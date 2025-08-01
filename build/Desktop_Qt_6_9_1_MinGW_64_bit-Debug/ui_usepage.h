@@ -20,12 +20,15 @@
 #include <QtWidgets/QToolBox>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "register_lable.h"
 
 QT_BEGIN_NAMESPACE
 
 class Ui_usepage
 {
 public:
+    QFrame *frame_12;
+    QFrame *frame_8;
     QFrame *frame;
     QFrame *frame_2;
     QLabel *label_2;
@@ -50,42 +53,52 @@ public:
     QVBoxLayout *verticalLayout;
     QLabel *label_6;
     QLabel *bestgoods_name_label;
-    QFrame *frame_8;
     QGroupBox *groupBox;
     QToolBox *analyse_page;
     QWidget *goods_page;
-    QLabel *add_goods_label;
-    QLabel *del_goods_label;
-    QLabel *change_goods_label;
+    register_lable *add_goods_label;
+    register_lable *del_goods_label;
+    register_lable *change_goods_label;
     QWidget *inventory_page;
-    QLabel *view_inventory_label;
-    QLabel *edit_inventory_label;
-    QLabel *report_inventory_label;
+    register_lable *view_inventory_label;
+    register_lable *edit_inventory_label;
+    register_lable *report_inventory_label;
     QWidget *analyse_page_2;
-    QLabel *profit_label;
-    QLabel *ranking_label;
-    QLabel *unsalabel_label;
+    register_lable *profit_label;
+    register_lable *ranking_label;
+    register_lable *unsalabel_label;
     QWidget *data_page;
-    QLabel *datain_label;
-    QLabel *dataout_label;
+    register_lable *datain_label;
+    register_lable *dataout_label;
     QFrame *frame_10;
-    QHBoxLayout *horizontalLayout_3;
-    QSpacerItem *horizontalSpacer_2;
     QGroupBox *groupBox_2;
     QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer_2;
     QHBoxLayout *horizontalLayout;
     QLabel *printuser_label;
+    QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer;
-    QLabel *label;
+    register_lable *exit_label;
 
     void setupUi(QWidget *usepage)
     {
         if (usepage->objectName().isEmpty())
             usepage->setObjectName("usepage");
-        usepage->resize(632, 512);
-        frame = new QFrame(usepage);
+        usepage->resize(649, 458);
+        frame_12 = new QFrame(usepage);
+        frame_12->setObjectName("frame_12");
+        frame_12->setGeometry(QRect(20, 30, 581, 391));
+        frame_12->setMaximumSize(QSize(631, 391));
+        frame_12->setFrameShape(QFrame::Shape::StyledPanel);
+        frame_12->setFrameShadow(QFrame::Shadow::Raised);
+        frame_8 = new QFrame(frame_12);
+        frame_8->setObjectName("frame_8");
+        frame_8->setGeometry(QRect(0, 20, 121, 371));
+        frame_8->setFrameShape(QFrame::Shape::StyledPanel);
+        frame_8->setFrameShadow(QFrame::Shadow::Raised);
+        frame = new QFrame(frame_12);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(120, 50, 421, 361));
+        frame->setGeometry(QRect(120, 50, 421, 341));
         QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -132,12 +145,12 @@ public:
         money_lcdNumber->setGeometry(QRect(30, 40, 64, 23));
         frame_5 = new QFrame(frame);
         frame_5->setObjectName("frame_5");
-        frame_5->setGeometry(QRect(0, 120, 221, 231));
+        frame_5->setGeometry(QRect(90, 100, 221, 231));
         frame_5->setFrameShape(QFrame::Shape::StyledPanel);
         frame_5->setFrameShadow(QFrame::Shadow::Raised);
         label_5 = new QLabel(frame_5);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(50, 10, 131, 41));
+        label_5->setGeometry(QRect(60, 10, 131, 41));
         QFont font1;
         font1.setPointSize(12);
         font1.setBold(false);
@@ -196,84 +209,78 @@ public:
 
         verticalLayout->addWidget(bestgoods_name_label);
 
-        frame_8 = new QFrame(usepage);
-        frame_8->setObjectName("frame_8");
-        frame_8->setGeometry(QRect(0, 50, 121, 371));
-        frame_8->setFrameShape(QFrame::Shape::StyledPanel);
-        frame_8->setFrameShadow(QFrame::Shadow::Raised);
-        groupBox = new QGroupBox(frame_8);
+        groupBox = new QGroupBox(frame_12);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(0, 10, 101, 400));
+        groupBox->setGeometry(QRect(10, 30, 101, 400));
         groupBox->setMinimumSize(QSize(101, 400));
         groupBox->setMaximumSize(QSize(101, 371));
         analyse_page = new QToolBox(groupBox);
         analyse_page->setObjectName("analyse_page");
-        analyse_page->setGeometry(QRect(10, 20, 81, 341));
+        analyse_page->setGeometry(QRect(10, 10, 81, 341));
         analyse_page->setFrameShape(QFrame::Shape::StyledPanel);
         goods_page = new QWidget();
         goods_page->setObjectName("goods_page");
         goods_page->setGeometry(QRect(0, 0, 79, 243));
-        add_goods_label = new QLabel(goods_page);
+        add_goods_label = new register_lable(goods_page);
         add_goods_label->setObjectName("add_goods_label");
         add_goods_label->setGeometry(QRect(19, 0, 41, 16));
-        del_goods_label = new QLabel(goods_page);
+        del_goods_label = new register_lable(goods_page);
         del_goods_label->setObjectName("del_goods_label");
         del_goods_label->setGeometry(QRect(20, 20, 40, 12));
-        change_goods_label = new QLabel(goods_page);
+        change_goods_label = new register_lable(goods_page);
         change_goods_label->setObjectName("change_goods_label");
         change_goods_label->setGeometry(QRect(10, 30, 61, 31));
         analyse_page->addItem(goods_page, QString::fromUtf8("\347\256\241\347\220\206\345\225\206\345\223\201\344\277\241\346\201\257"));
         inventory_page = new QWidget();
         inventory_page->setObjectName("inventory_page");
         inventory_page->setGeometry(QRect(0, 0, 79, 243));
-        view_inventory_label = new QLabel(inventory_page);
+        view_inventory_label = new register_lable(inventory_page);
         view_inventory_label->setObjectName("view_inventory_label");
         view_inventory_label->setGeometry(QRect(20, 0, 40, 12));
-        edit_inventory_label = new QLabel(inventory_page);
+        edit_inventory_label = new register_lable(inventory_page);
         edit_inventory_label->setObjectName("edit_inventory_label");
         edit_inventory_label->setGeometry(QRect(20, 20, 40, 12));
-        report_inventory_label = new QLabel(inventory_page);
+        report_inventory_label = new register_lable(inventory_page);
         report_inventory_label->setObjectName("report_inventory_label");
         report_inventory_label->setGeometry(QRect(20, 40, 40, 12));
         analyse_page->addItem(inventory_page, QString::fromUtf8("\345\272\223\345\255\230\347\256\241\347\220\206"));
         analyse_page_2 = new QWidget();
         analyse_page_2->setObjectName("analyse_page_2");
         analyse_page_2->setGeometry(QRect(0, 0, 79, 243));
-        profit_label = new QLabel(analyse_page_2);
+        profit_label = new register_lable(analyse_page_2);
         profit_label->setObjectName("profit_label");
         profit_label->setGeometry(QRect(19, 0, 51, 20));
-        ranking_label = new QLabel(analyse_page_2);
+        ranking_label = new register_lable(analyse_page_2);
         ranking_label->setObjectName("ranking_label");
         ranking_label->setGeometry(QRect(9, 20, 61, 20));
-        unsalabel_label = new QLabel(analyse_page_2);
+        unsalabel_label = new register_lable(analyse_page_2);
         unsalabel_label->setObjectName("unsalabel_label");
-        unsalabel_label->setGeometry(QRect(20, 40, 40, 12));
+        unsalabel_label->setGeometry(QRect(20, 40, 40, 16));
         analyse_page->addItem(analyse_page_2, QString::fromUtf8("\345\225\206\345\223\201\345\210\206\346\236\220"));
         data_page = new QWidget();
         data_page->setObjectName("data_page");
         data_page->setGeometry(QRect(0, 0, 79, 243));
-        datain_label = new QLabel(data_page);
+        datain_label = new register_lable(data_page);
         datain_label->setObjectName("datain_label");
         datain_label->setGeometry(QRect(20, 0, 40, 12));
-        dataout_label = new QLabel(data_page);
+        dataout_label = new register_lable(data_page);
         dataout_label->setObjectName("dataout_label");
         dataout_label->setGeometry(QRect(20, 20, 40, 12));
         analyse_page->addItem(data_page, QString::fromUtf8("\346\225\260\346\215\256"));
-        frame_10 = new QFrame(usepage);
+        frame_10 = new QFrame(frame_12);
         frame_10->setObjectName("frame_10");
-        frame_10->setGeometry(QRect(0, 0, 541, 51));
+        frame_10->setGeometry(QRect(120, 0, 461, 51));
         frame_10->setFrameShape(QFrame::Shape::StyledPanel);
         frame_10->setFrameShadow(QFrame::Shadow::Raised);
-        horizontalLayout_3 = new QHBoxLayout(frame_10);
-        horizontalLayout_3->setObjectName("horizontalLayout_3");
-        horizontalSpacer_2 = new QSpacerItem(348, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_3->addItem(horizontalSpacer_2);
-
         groupBox_2 = new QGroupBox(frame_10);
         groupBox_2->setObjectName("groupBox_2");
+        groupBox_2->setGeometry(QRect(100, 0, 361, 45));
         horizontalLayout_2 = new QHBoxLayout(groupBox_2);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalSpacer_2 = new QSpacerItem(348, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
         printuser_label = new QLabel(groupBox_2);
@@ -284,22 +291,23 @@ public:
 
         horizontalLayout_2->addLayout(horizontalLayout);
 
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_3);
+
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
-        label = new QLabel(groupBox_2);
-        label->setObjectName("label");
+        exit_label = new register_lable(groupBox_2);
+        exit_label->setObjectName("exit_label");
 
-        horizontalLayout_2->addWidget(label);
-
-
-        horizontalLayout_3->addWidget(groupBox_2);
+        horizontalLayout_2->addWidget(exit_label);
 
 
         retranslateUi(usepage);
 
-        analyse_page->setCurrentIndex(0);
+        analyse_page->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(usepage);
@@ -334,9 +342,9 @@ public:
         datain_label->setText(QCoreApplication::translate("usepage", "\346\225\260\346\215\256\345\257\274\345\205\245", nullptr));
         dataout_label->setText(QCoreApplication::translate("usepage", "\346\225\260\346\215\256\345\257\274\345\207\272", nullptr));
         analyse_page->setItemText(analyse_page->indexOf(data_page), QCoreApplication::translate("usepage", "\346\225\260\346\215\256", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("usepage", "GroupBox", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("usepage", "\347\224\250\346\210\267", nullptr));
         printuser_label->setText(QCoreApplication::translate("usepage", "TextLabel", nullptr));
-        label->setText(QCoreApplication::translate("usepage", "\347\231\273\345\207\272", nullptr));
+        exit_label->setText(QCoreApplication::translate("usepage", "\347\231\273\345\207\272", nullptr));
     } // retranslateUi
 
 };

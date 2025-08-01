@@ -1,13 +1,13 @@
 #ifndef GOODS_H
 #define GOODS_H
 
-#include <QWidget>
+#include <QMainWindow>
 
 namespace Ui {
 class goods;
 }
 
-class goods : public QWidget
+class goods : public QMainWindow
 {
     Q_OBJECT
 

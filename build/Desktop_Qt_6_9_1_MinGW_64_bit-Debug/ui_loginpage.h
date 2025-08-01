@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -26,6 +27,7 @@ QT_BEGIN_NAMESPACE
 class Ui_loginpage
 {
 public:
+    QFrame *frame;
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout_2;
     QWidget *widget;
@@ -42,10 +44,21 @@ public:
     {
         if (loginpage->objectName().isEmpty())
             loginpage->setObjectName("loginpage");
-        loginpage->resize(484, 369);
-        groupBox = new QGroupBox(loginpage);
+        loginpage->resize(454, 334);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Maximum, QSizePolicy::Policy::Maximum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(loginpage->sizePolicy().hasHeightForWidth());
+        loginpage->setSizePolicy(sizePolicy);
+        loginpage->setMaximumSize(QSize(454, 337));
+        frame = new QFrame(loginpage);
+        frame->setObjectName("frame");
+        frame->setGeometry(QRect(10, 0, 441, 331));
+        frame->setFrameShape(QFrame::Shape::StyledPanel);
+        frame->setFrameShadow(QFrame::Shadow::Raised);
+        groupBox = new QGroupBox(frame);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(120, 80, 203, 181));
+        groupBox->setGeometry(QRect(120, 70, 203, 181));
         verticalLayout_2 = new QVBoxLayout(groupBox);
         verticalLayout_2->setObjectName("verticalLayout_2");
         widget = new QWidget(groupBox);
@@ -82,12 +95,12 @@ public:
 
         verticalLayout_2->addWidget(widget);
 
-        confirm_pushButton = new QPushButton(loginpage);
+        confirm_pushButton = new QPushButton(frame);
         confirm_pushButton->setObjectName("confirm_pushButton");
-        confirm_pushButton->setGeometry(QRect(121, 271, 56, 18));
-        label_3 = new register_lable(loginpage);
+        confirm_pushButton->setGeometry(QRect(130, 260, 56, 18));
+        label_3 = new register_lable(frame);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(290, 270, 36, 16));
+        label_3->setGeometry(QRect(270, 260, 36, 16));
 
         retranslateUi(loginpage);
 
