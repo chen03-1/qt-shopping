@@ -43,7 +43,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="login_username_comboBox"/>
+        <widget class="QComboBox" name="login_username_comboBox">
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_2">

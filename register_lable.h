@@ -2,7 +2,7 @@
 #define REGISTER_LABLE_H
 
 #include <QLabel>
-
+//发射信号的标签
 class register_lable : public QLabel
 {
     Q_OBJECT

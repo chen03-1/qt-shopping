@@ -60,6 +60,7 @@ public:
 
         login_username_comboBox = new QComboBox(widget);
         login_username_comboBox->setObjectName("login_username_comboBox");
+        login_username_comboBox->setEditable(true);
 
         verticalLayout->addWidget(login_username_comboBox);
 

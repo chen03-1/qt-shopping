@@ -5,6 +5,7 @@
 #include <QStackedWidget>
 #include"register_interface1.h"
 #include<QSettings>
+#include <QMap>
 #include<QString>
 namespace Ui {
 class loginpage;
@@ -30,6 +31,7 @@ private slots:
 
 private:
     Ui::loginpage *ui;
+
 };
 
 #endif // LOGINPAGE_H
