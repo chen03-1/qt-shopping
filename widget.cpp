@@ -78,6 +78,8 @@ Widget::Widget(QWidget *parent)
                 stackedWidget->setCurrentIndex(2);
     });
 
+    connect(login_page,&loginpage::sendUsername,use_page,&usepage::printUsername);
+
 
 }
 

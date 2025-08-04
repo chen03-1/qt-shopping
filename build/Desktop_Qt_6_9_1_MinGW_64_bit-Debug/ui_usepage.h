@@ -72,11 +72,8 @@ public:
     register_lable *dataout_label;
     QFrame *frame_10;
     QGroupBox *groupBox_2;
-    QHBoxLayout *horizontalLayout_2;
-    QSpacerItem *horizontalSpacer_2;
     QHBoxLayout *horizontalLayout;
     QLabel *printuser_label;
-    QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer;
     register_lable *exit_label;
 
@@ -274,35 +271,27 @@ public:
         frame_10->setFrameShadow(QFrame::Shadow::Raised);
         groupBox_2 = new QGroupBox(frame_10);
         groupBox_2->setObjectName("groupBox_2");
-        groupBox_2->setGeometry(QRect(100, 0, 361, 45));
-        horizontalLayout_2 = new QHBoxLayout(groupBox_2);
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        horizontalSpacer_2 = new QSpacerItem(348, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_2->addItem(horizontalSpacer_2);
-
-        horizontalLayout = new QHBoxLayout();
+        groupBox_2->setGeometry(QRect(300, 0, 161, 51));
+        horizontalLayout = new QHBoxLayout(groupBox_2);
         horizontalLayout->setObjectName("horizontalLayout");
         printuser_label = new QLabel(groupBox_2);
         printuser_label->setObjectName("printuser_label");
 
         horizontalLayout->addWidget(printuser_label);
 
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Maximum, QSizePolicy::Policy::Minimum);
 
-        horizontalLayout_2->addLayout(horizontalLayout);
-
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_2->addItem(horizontalSpacer_3);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_2->addItem(horizontalSpacer);
+        horizontalLayout->addItem(horizontalSpacer);
 
         exit_label = new register_lable(groupBox_2);
         exit_label->setObjectName("exit_label");
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Maximum, QSizePolicy::Policy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(exit_label->sizePolicy().hasHeightForWidth());
+        exit_label->setSizePolicy(sizePolicy1);
 
-        horizontalLayout_2->addWidget(exit_label);
+        horizontalLayout->addWidget(exit_label);
 
 
         retranslateUi(usepage);

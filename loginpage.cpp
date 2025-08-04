@@ -46,6 +46,7 @@ loginpage::loginpage(QWidget *parent)
                 ui->login_password_lineEdit->clear();
             }
             emit switchTousepage();
+            emit sendUsername(login_username);
         }
         else
         {

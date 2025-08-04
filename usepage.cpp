@@ -1,6 +1,7 @@
 #include "usepage.h"
 #include "ui_usepage.h"
 #include"register_lable.h"
+
 usepage::usepage(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::usepage)
@@ -33,9 +34,16 @@ usepage::usepage(QWidget *parent)
             this,&usepage::switchToanalyse);
     connect(ui->unsalabel_label,static_cast<void (register_lable::*)()>(&register_lable::clicked),
             this,&usepage::switchToanalyse);
+
+    connect(this,&usepage::printUsername,this,[=](const QString &username){
+        ui->printuser_label->setText(username);
+    });
 }
 
 usepage::~usepage()
 {
     delete ui;
+}
+void usepage::printUsername(const QString &username) {
+    ui->printuser_label->setText(username); // 填充标签
 }

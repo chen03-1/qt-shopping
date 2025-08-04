@@ -22,7 +22,7 @@ public:
 signals:
     void switchToRegister();
     void switchTousepage();
-
+    void sendUsername(const QString & usename);
 private slots:
     void showsuccessUser();//显示用户
     void savesuccessUser(const QString &username,const QString &password);//存储用户和密码

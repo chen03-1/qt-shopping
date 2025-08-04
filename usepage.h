@@ -21,6 +21,8 @@ signals:
     void switchToinventory();
     void switchToanalyse();
 
+public slots:
+    void printUsername(const QString &username);
 private:
     Ui::usepage *ui;
 };
