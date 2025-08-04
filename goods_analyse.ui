@@ -69,12 +69,12 @@
    <property name="frameShadow">
     <enum>QFrame::Shadow::Raised</enum>
    </property>
-   <widget class="register_lable" name="label_2">
+   <widget class="register_lable" name="exit_label">
     <property name="geometry">
      <rect>
       <x>7</x>
       <y>7</y>
-      <width>21</width>
+      <width>31</width>
       <height>16</height>
      </rect>
     </property>
@@ -118,7 +118,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="find_label">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
          <horstretch>0</horstretch>

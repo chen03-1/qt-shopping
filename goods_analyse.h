@@ -11,6 +11,8 @@ class goods_analyse : public QWidget
 {
     Q_OBJECT
 
+signals:
+    void switchTousepage();
 public:
     explicit goods_analyse(QWidget *parent = nullptr);
     ~goods_analyse();

@@ -28,11 +28,12 @@ public:
     QAction *actionnew;
     QAction *actiondele;
     QAction *actiontime;
-    QAction *action2;
-    QAction *actions;
-    QAction *actions_2;
-    QAction *actions_3;
+    QAction *sellaction;
+    QAction *money_actions;
+    QAction *inactions;
+    QAction *out_actions;
     QAction *action;
+    QAction *actionexit;
     QWidget *centralwidget;
     QTableWidget *tableWidget;
     QStatusBar *statusbar;
@@ -40,7 +41,7 @@ public:
     QMenu *menumenu;
     QMenu *menu;
     QMenu *menu_2;
-    QMenu *menu_3;
+    QMenu *exit_menu;
 
     void setupUi(QMainWindow *goods)
     {
@@ -59,17 +60,19 @@ public:
         actiondele->setObjectName("actiondele");
         actiontime = new QAction(goods);
         actiontime->setObjectName("actiontime");
-        action2 = new QAction(goods);
-        action2->setObjectName("action2");
-        actions = new QAction(goods);
-        actions->setObjectName("actions");
-        actions_2 = new QAction(goods);
-        actions_2->setObjectName("actions_2");
-        actions_3 = new QAction(goods);
-        actions_3->setObjectName("actions_3");
+        sellaction = new QAction(goods);
+        sellaction->setObjectName("sellaction");
+        money_actions = new QAction(goods);
+        money_actions->setObjectName("money_actions");
+        inactions = new QAction(goods);
+        inactions->setObjectName("inactions");
+        out_actions = new QAction(goods);
+        out_actions->setObjectName("out_actions");
         action = new QAction(goods);
         action->setObjectName("action");
         action->setEnabled(true);
+        actionexit = new QAction(goods);
+        actionexit->setObjectName("actionexit");
         centralwidget = new QWidget(goods);
         centralwidget->setObjectName("centralwidget");
         tableWidget = new QTableWidget(centralwidget);
@@ -127,21 +130,22 @@ public:
         menu->setObjectName("menu");
         menu_2 = new QMenu(menuBar);
         menu_2->setObjectName("menu_2");
-        menu_3 = new QMenu(menuBar);
-        menu_3->setObjectName("menu_3");
+        exit_menu = new QMenu(menuBar);
+        exit_menu->setObjectName("exit_menu");
         goods->setMenuBar(menuBar);
 
         menuBar->addAction(menumenu->menuAction());
         menuBar->addAction(menu->menuAction());
         menuBar->addAction(menu_2->menuAction());
-        menuBar->addAction(menu_3->menuAction());
+        menuBar->addAction(exit_menu->menuAction());
         menumenu->addAction(actionnew);
         menumenu->addAction(actiondele);
         menu->addAction(actiontime);
-        menu->addAction(action2);
-        menu->addAction(actions);
-        menu_2->addAction(actions_2);
-        menu_2->addAction(actions_3);
+        menu->addAction(sellaction);
+        menu->addAction(money_actions);
+        menu_2->addAction(inactions);
+        menu_2->addAction(out_actions);
+        exit_menu->addAction(actionexit);
 
         retranslateUi(goods);
 
@@ -154,11 +158,12 @@ public:
         actionnew->setText(QCoreApplication::translate("goods", "\346\226\260\345\273\272", nullptr));
         actiondele->setText(QCoreApplication::translate("goods", "\345\210\240\351\231\244", nullptr));
         actiontime->setText(QCoreApplication::translate("goods", "\346\227\266\351\227\264", nullptr));
-        action2->setText(QCoreApplication::translate("goods", "\345\271\263\345\235\207\351\224\200\345\224\256\351\207\217", nullptr));
-        actions->setText(QCoreApplication::translate("goods", "\351\224\200\345\224\256\346\200\273\351\242\235", nullptr));
-        actions_2->setText(QCoreApplication::translate("goods", "\345\257\274\345\205\245", nullptr));
-        actions_3->setText(QCoreApplication::translate("goods", "\345\257\274\345\207\272", nullptr));
+        sellaction->setText(QCoreApplication::translate("goods", "\345\271\263\345\235\207\351\224\200\345\224\256\351\207\217", nullptr));
+        money_actions->setText(QCoreApplication::translate("goods", "\351\224\200\345\224\256\346\200\273\351\242\235", nullptr));
+        inactions->setText(QCoreApplication::translate("goods", "\345\257\274\345\205\245", nullptr));
+        out_actions->setText(QCoreApplication::translate("goods", "\345\257\274\345\207\272", nullptr));
         action->setText(QCoreApplication::translate("goods", "user", nullptr));
+        actionexit->setText(QCoreApplication::translate("goods", "\351\200\200\345\207\272", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("goods", "\345\225\206\345\223\201\346\210\220\346\234\254", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
@@ -188,7 +193,7 @@ public:
         menumenu->setTitle(QCoreApplication::translate("goods", "\347\274\226\350\276\221", nullptr));
         menu->setTitle(QCoreApplication::translate("goods", "\346\216\222\345\272\217", nullptr));
         menu_2->setTitle(QCoreApplication::translate("goods", "\346\225\260\346\215\256", nullptr));
-        menu_3->setTitle(QCoreApplication::translate("goods", "\351\200\200\345\207\272", nullptr));
+        exit_menu->setTitle(QCoreApplication::translate("goods", "\351\200\200\345\207\272", nullptr));
     } // retranslateUi
 
 };

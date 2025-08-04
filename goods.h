@@ -11,6 +11,8 @@ class goods : public QMainWindow
 {
     Q_OBJECT
 
+signals:
+    void switchTousepage();
 public:
     explicit goods(QWidget *parent = nullptr);
     ~goods();

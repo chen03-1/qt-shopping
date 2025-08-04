@@ -51,11 +51,32 @@ Widget::Widget(QWidget *parent)
             [=](){
             stackedWidget->setCurrentIndex(0);
     });
+    //跳转到各功能页
     connect(use_page,&usepage::switchTogoodspage,
             [=](){
                 stackedWidget->setCurrentIndex(3);
             });
-
+    connect(use_page,&usepage::switchToanalyse,
+            [=](){
+                stackedWidget->setCurrentIndex(4);
+            });
+    connect(use_page,&usepage::switchToinventory,
+            [=](){
+                stackedWidget->setCurrentIndex(5);
+            });
+    //功能页跳转至用户页
+    connect(goods_page,&goods::switchTousepage,
+            [=](){
+                stackedWidget->setCurrentIndex(2);
+    });
+    connect(analyse_page,&goods_analyse::switchTousepage,
+            [=](){
+                stackedWidget->setCurrentIndex(2);
+     });
+    connect(inventory_page,&inventory::switchTousepage,
+            [=](){
+                stackedWidget->setCurrentIndex(2);
+    });
 
 
 }

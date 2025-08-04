@@ -19,6 +19,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
+#include "register_lable.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -27,12 +28,12 @@ class Ui_goods_analyse
 public:
     QTableWidget *tableWidget;
     QFrame *frame;
-    QLabel *label_2;
+    register_lable *exit_label;
     QFrame *frame_2;
     QHBoxLayout *horizontalLayout;
     QLineEdit *lineEdit;
     QSpacerItem *horizontalSpacer_2;
-    QLabel *label;
+    QLabel *find_label;
 
     void setupUi(QWidget *goods_analyse)
     {
@@ -66,9 +67,9 @@ public:
         frame->setGeometry(QRect(0, 0, 351, 34));
         frame->setFrameShape(QFrame::Shape::StyledPanel);
         frame->setFrameShadow(QFrame::Shadow::Raised);
-        label_2 = new QLabel(frame);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(7, 7, 21, 16));
+        exit_label = new register_lable(frame);
+        exit_label->setObjectName("exit_label");
+        exit_label->setGeometry(QRect(7, 7, 31, 16));
         frame_2 = new QFrame(frame);
         frame_2->setObjectName("frame_2");
         frame_2->setGeometry(QRect(140, 0, 201, 33));
@@ -85,15 +86,15 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
-        label = new QLabel(frame_2);
-        label->setObjectName("label");
+        find_label = new QLabel(frame_2);
+        find_label->setObjectName("find_label");
         QSizePolicy sizePolicy1(QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
-        label->setSizePolicy(sizePolicy1);
+        sizePolicy1.setHeightForWidth(find_label->sizePolicy().hasHeightForWidth());
+        find_label->setSizePolicy(sizePolicy1);
 
-        horizontalLayout->addWidget(label);
+        horizontalLayout->addWidget(find_label);
 
 
         retranslateUi(goods_analyse);
@@ -114,8 +115,8 @@ public:
         ___qtablewidgetitem3->setText(QCoreApplication::translate("goods_analyse", "\350\257\204\347\272\247", nullptr));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->verticalHeaderItem(0);
         ___qtablewidgetitem4->setText(QCoreApplication::translate("goods_analyse", "\346\226\260\345\273\272\350\241\214", nullptr));
-        label_2->setText(QCoreApplication::translate("goods_analyse", " \351\200\200\345\207\272", nullptr));
-        label->setText(QCoreApplication::translate("goods_analyse", "\346\237\245\350\257\242", nullptr));
+        exit_label->setText(QCoreApplication::translate("goods_analyse", " \351\200\200\345\207\272", nullptr));
+        find_label->setText(QCoreApplication::translate("goods_analyse", "\346\237\245\350\257\242", nullptr));
     } // retranslateUi
 
 };

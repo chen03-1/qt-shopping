@@ -1,48 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>inventory</class>
- <widget class="QWidget" name="inventory">
+ <widget class="QMainWindow" name="inventory">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>542</width>
-    <height>439</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>MainWindow</string>
   </property>
-  <widget class="QTableWidget" name="tableWidget">
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>261</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string>新建行</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>库存</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>周内平均销售量</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>售卖等级</string>
+     </property>
+    </column>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>261</width>
-     <height>351</height>
+     <width>800</width>
+     <height>18</height>
     </rect>
    </property>
-   <row>
-    <property name="text">
-     <string>新建行</string>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>编辑</string>
     </property>
-   </row>
-   <column>
-    <property name="text">
-     <string>库存</string>
+    <addaction name="actionexit"/>
+   </widget>
+   <widget class="QMenu" name="exit_menu">
+    <property name="title">
+     <string>退出</string>
     </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>周内平均销售量</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>售卖等级</string>
-    </property>
-   </column>
+    <addaction name="actionexit_2"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="exit_menu"/>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionexit">
+   <property name="text">
+    <string>更改库存</string>
+   </property>
+   <property name="iconText">
+    <string>更改库存</string>
+   </property>
+   <property name="toolTip">
+    <string>更改库存</string>
+   </property>
+  </action>
+  <action name="actionexit_2">
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
