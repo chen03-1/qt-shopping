@@ -32,11 +32,12 @@ loginpage::loginpage(QWidget *parent)
             QMessageBox::warning(this, "提示", "用户名或密码不能为空");
         }
         QString error;
-        if(DatabaseManager::getInstance()->loginUser(login_username,login_password,error))
+        int userId = DatabaseManager::getInstance()->loginUser(login_username,login_password,error);
+        if(userId>0)
         {
             QMessageBox::information(this, "成功", "登录成功！");
-            bool status = ui->checkBox->isChecked();
-            if(status)
+            bool rememberPassword = ui->checkBox->isChecked();
+            if(rememberPassword)
             {
                  savesuccessUser(login_username, login_password);
             }
@@ -45,7 +46,8 @@ loginpage::loginpage(QWidget *parent)
             {
                 ui->login_password_lineEdit->clear();
             }
-            emit switchTousepage();
+            emit switchTousepage(userId);
+            //登录用户名投影到用户页上
             emit sendUsername(login_username);
         }
         else

@@ -44,7 +44,8 @@ Widget::Widget(QWidget *parent)
                 stackedWidget->setCurrentIndex(0);
     });
     connect(login_page,&loginpage::switchTousepage,
-            [=](){
+            [=](int userId){
+            use_page->setUserId(userId);
                 stackedWidget->setCurrentIndex(2);
     });
     connect(use_page,&usepage::switchTologinpage,

@@ -47,17 +47,146 @@ bool DatabaseManager::initDatabase()
 
     //创建用户表
     QSqlQuery query;
-    QString createTableSql="create table if not exists user("
-                             "id integer primary key autoincrement,"
-                             "username text unique not null,"
-                             "password text not null)";
-    if(!query.exec(createTableSql))
+    QString createUserTableSql = "create table if not exists user("
+                                 "id integer primary key autoincrement,"
+                                 "username text unique not null,"
+                                 "password text not null)";
+    if(!query.exec(createUserTableSql))
     {
         lastError = "创建用户表失败：" + query.lastError().text();
         db.close();
         return false;
     }
+    // 创建商品表（关联用户ID）
+    QString createGoodsTableSql = "create table if not exists goods("
+                                  "id integer primary key autoincrement,"
+                                  "user_id integer not null,"
+                                  "name text not null,"
+                                  "price real not null,"
+                                  "cost real not null,"
+                                  "shipping_fee real not null,"
+                                  "gross_profit real not null,"
+                                  "gross_profit_rate real not null,"
+                                  "stock integer not null,"
+                                  "sales integer default 0,"
+                                  "total_sales_amount real default 0,"
+                                  "today_sales integer default 0,"
+                                  "today_sales_amount real default 0,"
+                                  "weekly_sales integer default 0,"
+                                  "weekly_sales_amount real default 0,"
+                                  "average_weekly_sales real default 0,"
+                                  "supplier text,"
+                                  "foreign key(user_id) references user(id) on delete cascade)";
+    if(!query.exec(createGoodsTableSql))
+    {
+        lastError = "创建商品表失败：" + query.lastError().text();
+        db.close();
+        return false;
+    }
      lastError = "初始化成功";
+    return true;
+     return query.value(0).toInt();
+}
+bool DatabaseManager::addGoods(int userId, const QString& name, double price, int stock, QString& errorMsg)
+{
+    if(!db.isOpen())
+    {
+        errorMsg = "数据库未连接";
+        return false;
+    }
+
+    QSqlQuery query;
+    query.prepare("insert into goods(user_id, name, price, cost, shipping_fee, stock, supplier) values(:user_id, :name, :price, :cost, :shipping_fee, :stock, :supplier)");
+    query.bindValue(":user_id", userId);
+    query.bindValue(":name", name);
+    query.bindValue(":price", price);
+    query.bindValue(":cost", cost);
+    query.bindValue(":shipping_fee", shipping_fee);
+    query.bindValue(":stock", stock);
+    query.bindValue(":supplier", supplier);
+
+    if(!query.exec())
+    {
+        errorMsg = "添加商品失败：" + query.lastError().text();
+        return false;
+    }
+    return true;
+}
+
+QSqlQuery DatabaseManager::getGoodsByUserId(int userId, QString& errorMsg)
+{
+    if(!db.isOpen())
+    {
+        errorMsg = "数据库未连接";
+        return QSqlQuery();
+    }
+
+    QSqlQuery query;
+    query.prepare("select * from goods where user_id = :user_id");
+    query.bindValue(":user_id", userId);
+
+    if(!query.exec())
+    {
+        errorMsg = "查询商品失败：" + query.lastError().text();
+        return QSqlQuery();
+    }
+    return query;
+}
+
+bool DatabaseManager::updateGoods(int goodsId, int userId, const QString& name, double price, int stock, QString& errorMsg)
+{
+    if(!db.isOpen())
+    {
+        errorMsg = "数据库未连接";
+        return false;
+    }
+
+    QSqlQuery query;
+    query.prepare("update goods set name=:name, price=:price, stock=:stock where id=:id and user_id=:user_id");
+    query.bindValue(":id", goodsId);
+    query.bindValue(":user_id", userId);
+    query.bindValue(":name", name);
+    query.bindValue(":price", price);
+    query.bindValue(":stock", stock);
+
+    if(!query.exec())
+    {
+        errorMsg = "更新商品失败：" + query.lastError().text();
+        return false;
+    }
+
+    if(query.numRowsAffected() <= 0)
+    {
+        errorMsg = "未找到商品或无权限修改";
+        return false;
+    }
+    return true;
+}
+
+bool DatabaseManager::deleteGoods(int goodsId, int userId, QString& errorMsg)
+{
+    if(!db.isOpen())
+    {
+        errorMsg = "数据库未连接";
+        return false;
+    }
+
+    QSqlQuery query;
+    query.prepare("delete from goods where id=:id and user_id=:user_id");
+    query.bindValue(":id", goodsId);
+    query.bindValue(":user_id", userId);
+
+    if(!query.exec())
+    {
+        errorMsg = "删除商品失败：" + query.lastError().text();
+        return false;
+    }
+
+    if(query.numRowsAffected() <= 0)
+    {
+        errorMsg = "未找到商品或无权限删除";
+        return false;
+    }
     return true;
 }
 

@@ -21,7 +21,7 @@ public:
 
 signals:
     void switchToRegister();
-    void switchTousepage();
+    void switchTousepage(int userId);
     void sendUsername(const QString & usename);
 private slots:
     void showsuccessUser();//显示用户

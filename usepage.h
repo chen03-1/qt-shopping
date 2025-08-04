@@ -14,6 +14,7 @@ class usepage : public QWidget
 public:
     explicit usepage(QWidget *parent = nullptr);
     ~usepage();
+    void setUserId(int userId);
 
 signals:
     void switchTologinpage();
@@ -25,6 +26,7 @@ public slots:
     void printUsername(const QString &username);
 private:
     Ui::usepage *ui;
+     int m_userId; // 当前登录用户ID
 };
 
 #endif // USEPAGE_H
