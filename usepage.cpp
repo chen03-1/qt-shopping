@@ -1,7 +1,9 @@
 #include "usepage.h"
 #include "ui_usepage.h"
 #include"register_lable.h"
-
+#include<QSqlQuery>
+#include"databasemanager.h"
+#include<QMessageBox>
 usepage::usepage(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::usepage)

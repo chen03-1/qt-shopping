@@ -27,6 +27,7 @@ public slots:
 private:
     Ui::usepage *ui;
      int m_userId; // 当前登录用户ID
+    void loadUserGoods();
 };
 
 #endif // USEPAGE_H

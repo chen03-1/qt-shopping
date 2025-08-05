@@ -87,7 +87,7 @@ bool DatabaseManager::initDatabase()
     return true;
      return query.value(0).toInt();
 }
-bool DatabaseManager::addGoods(int userId, const QString& name, double price, int stock, QString& errorMsg)
+   bool DatabaseManager::addGoods(int userId, const QString& name, double price, double cost, double shipping_fee, double gross_profit, double gross_profit_rate, int stock, const QString& supplier, QString& errorMsg)
 {
     if(!db.isOpen())
     {

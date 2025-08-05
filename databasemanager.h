@@ -30,7 +30,7 @@ public:
     bool registerUser(const QString &username,const QString &password,QString &errorMsg);
 
 
-    int loginUser(const QString &username,const QString &password,QString &errorMsg);
+    bool loginUser(const QString &username,const QString &password,QString &errorMsg);
 
     // 商品相关操作
     bool addGoods(int userId, const QString& name, double price, double cost, double shipping_fee, double gross_profit, double gross_profit_rate, int stock, const QString& supplier, QString& errorMsg);
