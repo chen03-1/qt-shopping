@@ -53,6 +53,12 @@ Widget::Widget(QWidget *parent)
             stackedWidget->setCurrentIndex(0);
     });
     //跳转到各功能页
+    connect(use_page, &usepage::switchToAddGoodsPage,
+            [=](){
+                 stackedWidget->setCurrentIndex(3); // 先跳转至goods页面
+                // 跳转后立即触发goods页面的“增加商品弹窗”
+                 goods_page->show
+    });
     connect(use_page,&usepage::switchTogoodspage,
             [=](){
                 stackedWidget->setCurrentIndex(3);

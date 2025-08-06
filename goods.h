@@ -2,7 +2,9 @@
 #define GOODS_H
 
 #include <QMainWindow>
-
+#include <QList>
+#include <QTableWidgetItem>
+#include "addgoods_dialog.h"
 namespace Ui {
 class goods;
 }
@@ -16,6 +18,12 @@ signals:
 public:
     explicit goods(QWidget *parent = nullptr);
     ~goods();
+    //加载数据，刷新表格
+    void refreshGoodsTable();
+
+private slots:
+    // 接收添加商品完成的信号，刷新表格
+    void onGoodsAdded(const QList<QStringList> &newGoods);
 
 private:
     Ui::goods *ui;

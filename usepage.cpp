@@ -16,7 +16,7 @@ usepage::usepage(QWidget *parent)
 
     //商品管理页跳转
     connect(ui->add_goods_label,static_cast<void (register_lable::*)()>(&register_lable::clicked),
-            this,&usepage::switchTogoodspage);
+            this,&usepage:: switchToAddGoodsPage);//会弹弹窗
     connect(ui->del_goods_label,static_cast<void (register_lable::*)()>(&register_lable::clicked),
             this,&usepage::switchTogoodspage);
     connect(ui->change_goods_label, static_cast<void (register_lable::*)()>(&register_lable::clicked),

@@ -21,6 +21,7 @@ signals:
     void switchTogoodspage();
     void switchToinventory();
     void switchToanalyse();
+    void switchToAddGoodsPage(); // 触发“增加商品”弹窗的信号
 
 public slots:
     void printUsername(const QString &username);

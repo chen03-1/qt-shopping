@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    addgoods_dialog.cpp \
     databasemanager.cpp \
     goods.cpp \
     goods_analyse.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
     widget.cpp
 
 HEADERS += \
+    addgoods_dialog.h \
     databasemanager.h \
     goods.h \
     goods_analyse.h \
@@ -32,6 +34,7 @@ HEADERS += \
     widget.h
 
 FORMS += \
+    addgoods_dialog.ui \
     goods.ui \
     goods_analyse.ui \
     inventory.ui \
