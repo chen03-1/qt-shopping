@@ -17,13 +17,14 @@ public:
     ~addgoods_Dialog();
     //获取商品信息,按列返回
  QList<QStringList> getGoodsData() const;
+ void setUserId(int userId) { m_userId = userId; }
 
 private slots:
     void on_btnConfirm_clicked(); // 确定按钮
     void on_btnCancel_clicked();  // 取消按钮
 private:
     Ui::addgoods_Dialog *ui;
-
+ int m_userId = -1; // 存储用户ID
 
 };
 

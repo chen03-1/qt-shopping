@@ -30,6 +30,11 @@ public:
         if (addgoods_Dialog->objectName().isEmpty())
             addgoods_Dialog->setObjectName("addgoods_Dialog");
         addgoods_Dialog->resize(448, 359);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(addgoods_Dialog->sizePolicy().hasHeightForWidth());
+        addgoods_Dialog->setSizePolicy(sizePolicy);
         buttonBox = new QDialogButtonBox(addgoods_Dialog);
         buttonBox->setObjectName("buttonBox");
         buttonBox->setGeometry(QRect(250, 10, 141, 32));
@@ -53,7 +58,13 @@ public:
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         tableWidget->setVerticalHeaderItem(4, __qtablewidgetitem5);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(0, 0, 181, 281));
+        tableWidget->setGeometry(QRect(0, 0, 171, 291));
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::MinimumExpanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(tableWidget->sizePolicy().hasHeightForWidth());
+        tableWidget->setSizePolicy(sizePolicy1);
+        tableWidget->setMinimumSize(QSize(0, 291));
 
         retranslateUi(addgoods_Dialog);
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, addgoods_Dialog, qOverload<>(&QDialog::accept));

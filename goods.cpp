@@ -30,6 +30,7 @@ void goods::showAddGoodsDialog()
 
 
     addgoods_Dialog dialog(this);
+    dialog.setUserId(m_userId); // 传递当前用户ID
     // 显示弹窗，等待用户输入
     if (dialog.exec() == QDialog::Accepted) {
         // 获取弹窗中表格的输入数据（QList<QStringList>：行列表格数据）
@@ -78,6 +79,7 @@ void goods::showAddGoodsDialog()
         } else {
             QMessageBox::warning(this, "失败", "添加失败：" + errorMsg);
         }
+
     }
 }
 
