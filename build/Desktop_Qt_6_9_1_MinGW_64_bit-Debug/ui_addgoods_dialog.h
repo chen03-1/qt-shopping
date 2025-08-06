@@ -53,7 +53,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         tableWidget->setVerticalHeaderItem(4, __qtablewidgetitem5);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(0, 0, 181, 241));
+        tableWidget->setGeometry(QRect(0, 0, 181, 281));
 
         retranslateUi(addgoods_Dialog);
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, addgoods_Dialog, qOverload<>(&QDialog::accept));

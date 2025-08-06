@@ -3,6 +3,7 @@
 #include<QAction>
 #include<QDebug>
 #include <QMessageBox>
+#include <QSqlQuery>
 goods::goods(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::goods)
