@@ -84,7 +84,7 @@ void addgoods_Dialog::on_btnConfirm_clicked()
             throw std::runtime_error(errorMsg.toStdString());
         }
 
-        // 5. 插入成功：关闭弹窗并通知刷新
+        //  插入成功：关闭弹窗并通知刷新
         QMessageBox::information(this, "成功", "商品添加成功！");
         accept(); // 关闭弹窗（仅这里能调用，避免提前退出）
 
