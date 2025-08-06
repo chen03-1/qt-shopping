@@ -33,7 +33,7 @@ public:
     bool loginUser(const QString &username,const QString &password,QString &errorMsg);
 
     // 商品相关操作
-    bool addGoods(int userId, const QString& name, double price, double cost, double shipping_fee, double gross_profit, double gross_profit_rate, int stock, const QString& supplier, QString& errorMsg);
+    bool addGoods(int userId, const QString& name, const QString& skc,double price, double cost, double shipping_fee, double gross_profit, double gross_profit_rate, int stock, const QString& supplier, QString& errorMsg);
     QSqlQuery getGoodsByUserId(int userId, QString& errorMsg);
     bool updateGoods(int goodsId, int userId, const QString& name, double price, int stock, QString& errorMsg);
     bool deleteGoods(int goodsId, int userId, QString& errorMsg);

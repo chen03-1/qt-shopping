@@ -62,6 +62,7 @@ bool DatabaseManager::initDatabase()
                                   "id integer primary key autoincrement,"
                                   "user_id integer not null,"
                                   "name text  null,"
+                                  "skc text null"
                                   "price real  null,"
                                   "cost real  null,"
                                   "shipping_fee real  null,"
@@ -87,7 +88,7 @@ bool DatabaseManager::initDatabase()
     return true;
      return query.value(0).toInt();
 }
-   bool DatabaseManager::addGoods(int userId, const QString& name, double price, double cost, double shipping_fee, double gross_profit, double gross_profit_rate, int stock, const QString& supplier, QString& errorMsg)
+   bool DatabaseManager::addGoods(int userId, const QString& name,const QString& skc, double price, double cost, double shipping_fee, double gross_profit, double gross_profit_rate, int stock, const QString& supplier, QString& errorMsg)
 {
     if(!db.isOpen())
     {
@@ -96,9 +97,10 @@ bool DatabaseManager::initDatabase()
     }
 
     QSqlQuery query;
-    query.prepare("insert into goods(user_id, name, price, cost, shipping_fee, stock, supplier) values(:user_id, :name, :price, :cost, :shipping_fee, :stock, :supplier)");
+    query.prepare("insert into goods(user_id, name,skc,price, cost, shipping_fee, stock, supplier) values(:user_id, :name, :price, :cost, :shipping_fee, :stock, :supplier)");
     query.bindValue(":user_id", userId);
     query.bindValue(":name", name);
+    query.bindValue(":skc",skc);
     query.bindValue(":price", price);
     query.bindValue(":cost", cost);
     query.bindValue(":shipping_fee", shipping_fee);

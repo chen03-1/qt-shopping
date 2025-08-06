@@ -40,8 +40,8 @@ public:
             tableWidget->setColumnCount(1);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        if (tableWidget->rowCount() < 4)
-            tableWidget->setRowCount(4);
+        if (tableWidget->rowCount() < 5)
+            tableWidget->setRowCount(5);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         tableWidget->setVerticalHeaderItem(0, __qtablewidgetitem1);
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
@@ -50,6 +50,8 @@ public:
         tableWidget->setVerticalHeaderItem(2, __qtablewidgetitem3);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
         tableWidget->setVerticalHeaderItem(3, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(4, __qtablewidgetitem5);
         tableWidget->setObjectName("tableWidget");
         tableWidget->setGeometry(QRect(0, 0, 181, 241));
 
@@ -68,11 +70,13 @@ public:
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->verticalHeaderItem(0);
         ___qtablewidgetitem1->setText(QCoreApplication::translate("addgoods_Dialog", "\345\220\215\347\247\260", nullptr));
         QTableWidgetItem *___qtablewidgetitem2 = tableWidget->verticalHeaderItem(1);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("addgoods_Dialog", "\346\210\220\346\234\254", nullptr));
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("addgoods_Dialog", "skc", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = tableWidget->verticalHeaderItem(2);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("addgoods_Dialog", "\345\256\232\344\273\267", nullptr));
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("addgoods_Dialog", "\346\210\220\346\234\254", nullptr));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->verticalHeaderItem(3);
-        ___qtablewidgetitem4->setText(QCoreApplication::translate("addgoods_Dialog", "\344\276\233\345\272\224\345\225\206", nullptr));
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("addgoods_Dialog", "\345\256\232\344\273\267", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->verticalHeaderItem(4);
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("addgoods_Dialog", "\344\276\233\345\272\224\345\225\206", nullptr));
     } // retranslateUi
 
 };

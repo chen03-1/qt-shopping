@@ -3,6 +3,7 @@
 #include"register_lable.h"
 #include<QDebug>
 #include <QVBoxLayout>
+#include<addgoods_dialog.h>
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -56,12 +57,16 @@ Widget::Widget(QWidget *parent)
     connect(use_page, &usepage::switchToAddGoodsPage,
             [=](){
                  stackedWidget->setCurrentIndex(3); // 先跳转至goods页面
+                 // 传递当前用户ID给goods页面
+                 goods_page->setUserId(use_page->getUserId());
                 // 跳转后立即触发goods页面的“增加商品弹窗”
-                 goods_page->show
+                 goods_page->showAddGoodsDialog();
     });
     connect(use_page,&usepage::switchTogoodspage,
             [=](){
                 stackedWidget->setCurrentIndex(3);
+        goods_page->setUserId(use_page->getUserId()); // 传递用户ID
+        goods_page->refreshGoodsTable(); // 刷新当前用户商品列表
             });
     connect(use_page,&usepage::switchToanalyse,
             [=](){
