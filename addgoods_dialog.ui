@@ -45,6 +45,11 @@
    </row>
    <row>
     <property name="text">
+     <string>skc</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
      <string>成本</string>
     </property>
    </row>

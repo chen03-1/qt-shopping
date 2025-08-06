@@ -40,10 +40,19 @@ QList<QStringList>addgoods_Dialog::getGoodsData() const
 }
 void addgoods_Dialog::on_btnConfirm_clicked()
 {
-    // 简单校验（如名称不能为空）
-    QTableWidgetItem *nameItem = ui->tableWidget->item(0, 0); // 假设第 0 列是名称
-    if (!nameItem || nameItem->text().trimmed().isEmpty()) {
-        QMessageBox::warning(this, "错误", "商品名称不能为空！");
+    // 简单校验
+    QTableWidgetItem *nameItem = ui->tableWidget->item(1, 1); // 第 1 列是名称
+    QTableWidgetItem *skcItem= ui->tableWidget->item(1, 2);
+    QTableWidgetItem *costItem= ui->tableWidget->item(1, 3);
+    QTableWidgetItem *priceItem= ui->tableWidget->item(1, 4);
+    QTableWidgetItem *providerItem= ui->tableWidget->item(1, 5);
+    if (nameItem->text().trimmed().isEmpty()
+        ||skcItem->text().trimmed().isEmpty()
+        ||costItem->text().trimmed().isEmpty()
+        ||priceItem->text().trimmed().isEmpty()
+        ||providerItem->text().trimmed().isEmpty()
+        ) {
+        QMessageBox::warning(this, "错误", "商品属性不能为空！");
         return;
     }
     accept(); // 关闭弹窗，返回 Accepted

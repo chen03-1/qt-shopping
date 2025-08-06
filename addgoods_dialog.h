@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include <QTableWidgetItem> // 表格项头文件
-
+#include<QTableWidget>
 namespace Ui {
 class addgoods_Dialog;
 }
@@ -23,6 +23,7 @@ private slots:
     void on_btnCancel_clicked();  // 取消按钮
 private:
     Ui::addgoods_Dialog *ui;
+
 
 };
 

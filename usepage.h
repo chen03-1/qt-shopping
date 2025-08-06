@@ -15,6 +15,7 @@ public:
     explicit usepage(QWidget *parent = nullptr);
     ~usepage();
     void setUserId(int userId);
+    int getUserId() const { return m_userId; } // 新增：获取用户ID
 
 signals:
     void switchTologinpage();
