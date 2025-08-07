@@ -45,12 +45,31 @@ QList<QStringList>addgoods_Dialog::getGoodsData() const
 }
 void addgoods_Dialog::on_btnConfirm_clicked()
 {
+    QString name, skc,provider;
+    double price=0.0;
+    double cost=0.0;
+    int stock;
+    bool isPriceValid = false, isCostValid = false;
     // 简单校验
-    QTableWidgetItem *nameItem = ui->tableWidget->item(1, 1); // 第 1 列是名称
-    QTableWidgetItem *skcItem= ui->tableWidget->item(1, 2);
-    QTableWidgetItem *costItem= ui->tableWidget->item(1, 3);
-    QTableWidgetItem *priceItem= ui->tableWidget->item(1, 4);
-    QTableWidgetItem *providerItem= ui->tableWidget->item(1, 5);
+    // 第 1 列是名称
+    QTableWidgetItem *nameItem = ui->tableWidget->item(0, 1);
+    name = (nameItem) ? nameItem->text().trimmed() : " ";
+
+    QTableWidgetItem *skcItem= ui->tableWidget->item(1, 1);
+    skc = (skcItem) ? skcItem->text().trimmed() : " ";
+
+    QTableWidgetItem *costItem= ui->tableWidget->item(2, 1);
+    if (costItem && !costItem->text().isEmpty())
+        cost = costItem->text().toDouble(&isCostValid);
+
+
+    QTableWidgetItem *priceItem= ui->tableWidget->item(3, 1);
+    if (priceItem && !priceItem->text().isEmpty())
+        price = priceItem->text().toDouble(&isPriceValid);
+
+    QTableWidgetItem *providerItem= ui->tableWidget->item(4, 1);
+    provider=(providerItem)?providerItem->text().trimmed() : " ";
+
     if (nameItem->text().trimmed().isEmpty()
         ||skcItem->text().trimmed().isEmpty()
         ||costItem->text().trimmed().isEmpty()
@@ -58,6 +77,14 @@ void addgoods_Dialog::on_btnConfirm_clicked()
         ||providerItem->text().trimmed().isEmpty()
         ) {
         QMessageBox::warning(this, "错误", "商品属性不能为空！");
+        return;
+    }
+    if (!isPriceValid || price <= 0) {
+        QMessageBox::warning(this, "错误", "价格必须是正数！");
+        return;
+    }
+    if (!isCostValid || cost < 0) {
+        QMessageBox::warning(this, "错误", "成本不能为负！");
         return;
     }
     //  数据库插入（关键：捕获所有可能的错误）
